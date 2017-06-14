@@ -18,22 +18,22 @@ The given rating is always tied to a specific transaction by its ID, as well as 
 
 ## Routes
 
-### /rating/new
+### GET /rating/new
 
 Creates a new rating record.
 
-### /rating/edit
+### PUT /rating/update
 
 Modifies an existing record.
 
-### /rating/all
+### GET /rating/getall
 
-Shows all records (debugging only).
+Shows all records (for debugging purposes only).
 
-### /rating/:userID
+### /rating/getbyuid/:userID
 
 Looks up all records rated by one user.
 
-### /rating/:transactionID
+### /rating/getbytid/:transactionID
 
 Looks up all records attached to one transaction.
