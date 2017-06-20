@@ -30,6 +30,10 @@ a:hover span {
 	color: rgb(47,47,255);
 }
 
+.top {
+	margin-top: 100px;
+}
+
 .block {
 	margin-bottom: 20px;
 }
