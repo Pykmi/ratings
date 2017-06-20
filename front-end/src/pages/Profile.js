@@ -3,6 +3,8 @@ import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
+import APIFetch from '../lib/Fetch';
+
 import '../css/User.css';
 
 class User extends React.Component {
@@ -96,6 +98,25 @@ class Review extends React.Component {
 }
 
 class Profile extends React.Component {
+	constructor() {
+		super();
+		this.state = {store: false}
+	}
+
+	store(data) {
+		this.setState({store: data})
+	}
+
+	componentDidMount() {
+		APIFetch().get("/ratings/getbyseller/Heikki Keskari").then(response => {
+            this.store(response.data)
+        })
+	}
+
+	componentDidUpdate() {
+		console.log(this.state.store)
+	}
+
     render() {
 		return (
 			<div>
