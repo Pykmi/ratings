@@ -24,10 +24,10 @@ class User extends React.Component {
 		return (
 			<Grid className="block">
 				<Row className="show-grid">
-					<Col mdOffset={2} md={8}><div id="username">Heikki Keskari</div></Col>
+					<Col mdOffset={3} md={8}><div id="username">Heikki Keskari</div></Col>
 				</Row>
 				<Row className="show-grid">
-					<Col mdOffset={2} md={8}>
+					<Col mdOffset={3} md={8}>
 						<div>
 							<img src="/i/star.png" alt="" />
 							<img src="/i/star.png" alt="" />
@@ -50,10 +50,10 @@ class Review extends React.Component {
 		return (
 			<Grid className="block">
 				<Row>
-					<Col mdOffset={2} md={8}><div className="text bold">Helkama Yoker 16" polkupyörä (09.05.2017 08:25)</div></Col>
+					<Col mdOffset={3} md={8}><div className="text bold">Helkama Yoker 16" polkupyörä (09.05.2017 08:25)</div></Col>
 				</Row>
 				<Row>
-					<Col mdOffset={2} md={1}>
+					<Col mdOffset={3} md={1}>
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
@@ -61,14 +61,14 @@ class Review extends React.Component {
 					<Col md={6}><span className="text">Overall</span></Col>
 				</Row>
 				<Row>
-					<Col mdOffset={2} md={1}>
+					<Col mdOffset={3} md={1}>
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
 					</Col>
 					<Col md={6}><div className="text">Communication</div></Col>
 				</Row>
 				<Row>
-					<Col mdOffset={2} md={1}>
+					<Col mdOffset={3} md={1}>
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
@@ -76,7 +76,7 @@ class Review extends React.Component {
 					<Col md={6}><div className="text">Shipping</div></Col>
 				</Row>
 				<Row className="sblock">
-					<Col mdOffset={2} md={1}>
+					<Col mdOffset={3} md={1}>
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
 						<img src="/i/star.png" alt="" />
@@ -85,10 +85,10 @@ class Review extends React.Component {
 					<Col md={6}><div className="text">Condition</div></Col>
 				</Row>
 				<Row className="sblock">
-					<Col mdOffset={2} md={6}><div className="text">Buyer: Nirri Mäkelä</div></Col>
+					<Col mdOffset={3} md={6}><div className="text">Buyer: Nirri Mäkelä</div></Col>
 				</Row>
 				<Row>
-					<Col mdOffset={2} md={6}><div className="text">Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div></Col>
+					<Col mdOffset={3} md={6}><div className="text">Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div></Col>
 				</Row>
 			</Grid>
 		);
