@@ -21,13 +21,15 @@ func UpdateRecord(w http.ResponseWriter, r *http.Request) {
 		data := models.SQLput{
 			Table: "ratings",
 			Map: map[string]string{
-				"transaction_id": record.TransactionID,
-				"sender_id":      record.SenderID,
-				"overall":        record.Overall,
-				"communication":  record.Communication,
-				"shipping":       record.Shipping,
-				"condition":      record.Condition,
-				"comment":        record.Comment,
+				"item":          record.Item,
+				"sender":        record.Sender,
+				"seller":        record.Seller,
+				"saved":         record.Saved,
+				"overall":       record.Overall,
+				"communication": record.Communication,
+				"shipping":      record.Shipping,
+				"condition":     record.Condition,
+				"comment":       record.Comment,
 			},
 			Condition: record.SQLCondition,
 		}

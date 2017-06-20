@@ -37,8 +37,9 @@ func setupRoutes(url string) http.Handler {
 	router.HandleFunc(pat.Post("/ratings/new"), handlers.CreateRecord)
 	router.HandleFunc(pat.Put("/ratings/update"), handlers.UpdateRecord)
 	router.HandleFunc(pat.Get("/ratings/getall"), handlers.GetAll)
-	router.HandleFunc(pat.Get("/ratings/getbyuid/:userid"), handlers.GetByUser)
-	router.HandleFunc(pat.Get("/ratings/getbytid/:transactionid"), handlers.GetByTransaction)
+	router.HandleFunc(pat.Get("/ratings/getbyseller/:seller"), handlers.GetBySeller)
+	router.HandleFunc(pat.Get("/ratings/getbysender/:sender"), handlers.GetBySender)
+	//router.HandleFunc(pat.Get("/ratings/getbytid/:transactionid"), handlers.GetByTransaction)
 
 	return router
 }

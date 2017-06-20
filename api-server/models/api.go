@@ -1,8 +1,10 @@
 package models
 
 type Record struct {
-	TransactionID string `json:"transaction_id"`
-	SenderID      string `json:"sender_id"`
+	Item          string `json:"item"`
+	Sender        string `json:"sender"`
+	Seller        string `json:"seller"`
+	Saved         string `json:"saved"`
 	Overall       string `json:"overall"`
 	Communication string `json:"communication"`
 	Shipping      string `json:"shipping"`

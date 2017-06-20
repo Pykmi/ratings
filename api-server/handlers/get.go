@@ -61,15 +61,40 @@ func GetByTransaction(w http.ResponseWriter, r *http.Request) {
 	httpError(w, err)
 }
 
-func GetByUser(w http.ResponseWriter, r *http.Request) {
+func GetBySeller(w http.ResponseWriter, r *http.Request) {
 	var records []models.Record
 	var response models.Response
 
 	fetch := db.New()
 	fetch.Url(getURL(r))
 
-	userid := pat.Param(r, "userid")
-	path := "/db/select/ratings/*/sender_id='" + userid + "'"
+	seller := pat.Param(r, "seller")
+	path := "/db/select/ratings/*/seller='" + seller + "'"
+
+	status, err := fetch.Get(path, &records)
+	if err != nil {
+		response.Error = err.Error()
+		log.Print(err)
+	}
+
+	response.Code = status
+	if len(records) > 0 {
+		response.Data = records
+	}
+
+	err = writeJSON(w, response)
+	httpError(w, err)
+}
+
+func GetBySender(w http.ResponseWriter, r *http.Request) {
+	var records []models.Record
+	var response models.Response
+
+	fetch := db.New()
+	fetch.Url(getURL(r))
+
+	sender := pat.Param(r, "sender")
+	path := "/db/select/ratings/*/sender='" + sender + "'"
 
 	status, err := fetch.Get(path, &records)
 	if err != nil {
