@@ -1,61 +1,15 @@
 import React from 'react';
+
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
-import _ from 'lodash';
+import User from '../components/User';
+import Stars from '../components/Stars';
+
 import APIFetch from '../lib/Fetch';
 
-import '../css/User.css';
-
-class Stars extends React.Component {
-    render() {
-		return (
-			<div>
-				{_.times(this.props.total, i =>
-					<img src="/i/star.png" alt="" />
-				)}
-			</div>
-		)
-    }
-}
-
-class User extends React.Component {
-	constructor() {
-		super();
-		this.state = {tooltip: 'none'}
-		this.update = this.update.bind(this)
-	}
-
-	update(e) {
-		if(this.state.tooltip === 'none') {
-			this.setState({tooltip: 'block'})
-		} else {
-			this.setState({tooltip: 'none'})
-		}
-	}
-
-    render() {
-		return (
-			<Grid className="block">
-				<Row className="show-grid">
-					<Col mdOffset={3} md={8}><div id="username" className="top">{this.props.seller}</div></Col>
-				</Row>
-				<Row className="show-grid">
-					<Col mdOffset={3} md={8}>
-						<div>
-							<Stars total={this.props.average} />
-							<a id="reviews_total">
-								({this.props.reviews} reviews)
-								<span><img src="/i/breakdown.png" alt="" /></span>
-							</a>
-						</div>
-					</Col>
-				</Row>
-			</Grid>
-		);
-    }
-}
+import '../css/Profile.css';
 
 class Review extends React.Component {
     render() {
@@ -107,12 +61,12 @@ class Profile extends React.Component {
 
 	store(data) {
 		this.setState({store: data})
+		this.setState({size: Object.keys(data).length})
 	}
 
 	componentDidMount() {
 		APIFetch().get("/ratings/getbyseller/Heikki Keskari").then(response => {
             this.store(response.data)
-			this.setState({size: Object.keys(response.data).length})
         })
 	}
 
